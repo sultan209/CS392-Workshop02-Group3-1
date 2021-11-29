@@ -1,7 +1,7 @@
 {
   "name": "cs392-workshop02-group3",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000C\u0000S\u00003\u00009\u00002\u0000-\u0000W\u0000o\u0000r\u0000k\u0000s\u0000h\u0000o\u0000p\u00000\u00002\u0000-\u0000G\u0000r\u0000o\u0000u\u0000p\u00003\u0000\r\u0000 \u0000",
+  "description": "CS392-Workshop2-Group3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
