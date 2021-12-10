@@ -1,7 +1,10 @@
 const express = require("express")
+require("dotenv").config()
 const foodPrediction = require("./food-prediction")
 
+
 const app = express()
+const port = process.env.PORT || 8000
 
 app.use(express.json())
 
@@ -20,6 +23,6 @@ app.get("/predict", async (req, res) => {
 })
 
 
-app.listen(8000, () => {
-    console.log("App listen at port 8000")
+app.listen(port, () => {
+    console.log(`App listen at port: ${port}`)
 })

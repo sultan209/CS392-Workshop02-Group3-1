@@ -21,6 +21,7 @@
   "homepage": "https://github.com/sultan209/CS392-Workshop02-Group3#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "fasttext": "^1.0.0"
   },
