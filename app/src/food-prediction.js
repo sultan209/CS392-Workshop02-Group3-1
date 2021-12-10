@@ -5,7 +5,7 @@ let trainingDone = false
 
 const config = {
     dim: 100,
-    input: "../../train.txt",
+    input: "./app/src/train.txt",
     output: "model",
     bucket: 2000000,
     loss: "softmax",
@@ -16,24 +16,21 @@ const trainClassifier = async () => {
             console.log(res)
             trainingDone = true
         })
+        .catch(err => {
+            console.log(err)
+            console.log(config)
+        })
 }
-
 
 const foodPrediction = async ingredient => {
     if (!trainingDone)
         await trainClassifier()
 
     return classifier.predict(ingredient, 3)
-        .then(res => {
-            console.log(res)
-            return res
-        })
-        .catch(err => {
-            console.error(err)
-            return []
-        })
+        .then(res => res)
+        .catch(err => err)
 }
 
-console.log(foodPrediction("milk"))
+console.log(foodPrediction("meat"))
 
 module.exports = foodPrediction
