@@ -1,15 +1,20 @@
 const express = require("express")
+const cors = require("cors")
 require("dotenv").config()
 const foodPrediction = require("./food-prediction")
-
 
 const app = express()
 const port = process.env.PORT || 8000
 
+app.use(cors({
+    origin: "*",
+    methods: ["GET"]
+}))
 app.use(express.json())
 
 app.get("/predict", async (req, res) => {
-    let {ingredient} = req.body;
+    let ingredient = req.query.ingredient;
+    console.log(ingredient)
     foodPrediction(ingredient)
         .then(prediction => {
             console.log(prediction)
