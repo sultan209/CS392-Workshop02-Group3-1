@@ -19,7 +19,7 @@ app.get("/predict", async (req, res) => {
         .then(prediction => {
             console.log(prediction)
             res.status(200)
-            res.send(prediction)
+            res.send({ingredient: ingredient, prediction: prediction})
         })
         .catch(err => {
             res.status(400)
