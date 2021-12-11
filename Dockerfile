@@ -1,7 +1,9 @@
 FROM node:17-alpine
-WORKDIR /app
+RUN mkdir food-prediction
+WORKDIR /food-prediction
 COPY package.json .
 RUN npm install
-COPY . ./
-EXPOSE 3000
+COPY ./ ./
+ENV PORT 3000
+EXPOSE $PORT
 CMD ["node", "app/src/main.js"]
