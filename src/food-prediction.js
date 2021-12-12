@@ -1,36 +1,32 @@
-const fasttext = require("fasttext")
+const fastText = require("fasttext")
+const path = require("path")
 
-const classifier = new fasttext.Classifier()
-let trainingDone = false
+const model = path.resolve(__dirname, '../model.bin');
 
-const config = {
-    dim: 100,
-    input: "train.txt",
-    output: "model",
-    bucket: 2000000,
-    loss: "softmax",
-}
-const trainClassifier = async () => {
-    await classifier.train("supervised", config)
-        .then(res => {
-            console.log(res)
-            trainingDone = true
-        })
-        .catch(err => {
-            console.log(err)
-            console.log(config)
-        })
-}
+// In case if I want to train the model
+// const input = path.resolve(__dirname, "./train.txt")
+// const trainClassifier = () => {
+//     const classifier = new fastText.Classifier()
+//     const config = {
+//         dim: 100,
+//         input: input,
+//         output: "model",
+//         bucket: 2000000,
+//         loss: "softmax",
+//     }
+//     return classifier.train("supervised", config)
+// }
 
-const foodPrediction = async ingredient => {
-    if (!trainingDone)
-        await trainClassifier()
-    if (isNaN(ingredient))
-        throw new TypeError("Number is invalid parameter")
+const classifier = new fastText.Classifier(model)
 
+
+const foodPrediction = ingredient => {
+    if (typeof ingredient !== "string")
+        throw new TypeError("Only string is valid")
+    if (ingredient === "")
+        throw new TypeError("Ingredient cannot be empty")
     return classifier.predict(ingredient, 3)
-        .then(res => res)
-        .catch(err => err)
 }
+
 
 module.exports = foodPrediction
