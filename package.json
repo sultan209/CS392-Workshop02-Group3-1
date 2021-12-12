@@ -2,11 +2,11 @@
   "name": "cs392-workshop02-group3",
   "version": "1.0.0",
   "description": "CS392-Workshop2-Group3",
-  "main": "app/src/main.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "node app/src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app/src/main.js"
+    "start": "node src/main.js",
+    "test": "jest --verbose",
+    "dev": "nodemon src/main.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "jest": "^27.4.4",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }

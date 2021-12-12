@@ -5,7 +5,7 @@ let trainingDone = false
 
 const config = {
     dim: 100,
-    input: "./app/src/train.txt",
+    input: "train.txt",
     output: "model",
     bucket: 2000000,
     loss: "softmax",
@@ -25,12 +25,12 @@ const trainClassifier = async () => {
 const foodPrediction = async ingredient => {
     if (!trainingDone)
         await trainClassifier()
+    if (isNaN(ingredient))
+        throw new TypeError("Number is invalid parameter")
 
     return classifier.predict(ingredient, 3)
         .then(res => res)
         .catch(err => err)
 }
-
-console.log(foodPrediction("meat"))
 
 module.exports = foodPrediction

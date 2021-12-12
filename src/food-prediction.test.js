@@ -1,4 +1,4 @@
-const foodPrediction = require("../src/food-prediction")
+const foodPrediction = require("./food-prediction")
 
 describe("Food Prediction Functionality", () => {
     it('should return empty list when no answer found', function () {
