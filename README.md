@@ -6,8 +6,10 @@ Machine-learning approach for automated and systematic prediction of nutrient co
 ```js
 git clone https://github.com/AhmedSaudA/CS392-Workshop02-Group3.git
 cd CS392-Workshop02-Group3
-npm install
-node index.js
+npm
+install
+node
+main.js
 ```
 ### Operating instructions:
 Write any kind of food ingredients on the text field and press submit then the result will appear on the server side.  For example, If we write beef, tomato, and bread it will return a burger.

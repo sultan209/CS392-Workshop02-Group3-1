@@ -2,9 +2,11 @@
   "name": "cs392-workshop02-group3",
   "version": "1.0.0",
   "description": "CS392-Workshop2-Group3",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/main.js",
+    "test": "jest --verbose",
+    "dev": "nodemon src/main.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,13 @@
   "homepage": "https://github.com/sultan209/CS392-Workshop02-Group3#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "fasttext": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.4",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }
