@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "test": "jest --verbose",
+    "test": "NODE_ENV=test jest",
     "dev": "nodemon src/main.js"
   },
   "repository": {

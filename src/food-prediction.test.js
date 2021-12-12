@@ -15,4 +15,19 @@ describe("Food Prediction Functionality", () => {
             })
 
     });
+
+    it('should return an exception if the parameter is not string', function () {
+        expect(() => {
+            foodPrediction(35)
+                .catch(err => err)
+        }).toThrow(TypeError)
+    });
+
+    it('should return an excepttion if the parameter is empty', function () {
+        expect(() => {
+            foodPrediction("")
+                .catch(err => err)
+        }).toThrow(TypeError)
+    });
+
 })

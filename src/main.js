@@ -14,20 +14,26 @@ app.use(express.json())
 
 app.get("/predict", async (req, res) => {
     let ingredient = req.query.ingredient;
-    console.log(ingredient)
-    foodPrediction(ingredient)
-        .then(prediction => {
-            console.log(prediction)
-            res.status(200)
-            res.send({ingredient: ingredient, prediction: prediction})
-        })
-        .catch(err => {
-            res.status(400)
-            res.send(err)
-        })
+    try {
+        foodPrediction(ingredient)
+            .then(prediction => {
+                console.log(prediction)
+                res.status(200)
+                res.send({ingredient: ingredient, prediction: prediction})
+            })
+            .catch(err => {
+                res.status(400)
+                res.send(err)
+            })
+    } catch (err) {
+        res.status(400)
+        res.send(err)
+    }
 })
 
+if (process.env.NODE_ENV !== "test")
+    app.listen(port, () => {
+        console.log(`App listen at port: ${port}`)
+    })
 
-app.listen(port, () => {
-    console.log(`App listen at port: ${port}`)
-})
+module.exports = app

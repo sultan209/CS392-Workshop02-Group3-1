@@ -21,6 +21,8 @@ const classifier = new fastText.Classifier(model)
 
 
 const foodPrediction = ingredient => {
+    if (!isNaN(ingredient))
+        throw new TypeError("Ingredient Cannot be a number")
     if (typeof ingredient !== "string")
         throw new TypeError("Only string is valid")
     if (ingredient === "")
