@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/AhmedAl-Sardi/CS392-Workshop02-Group3/actions/workflows/node.js.yml/badge.svg)](https://github.com/AhmedAl-Sardi/CS392-Workshop02-Group3/actions/workflows/node.js.yml)
 # Food Prediction.
 ### Description:
 Machine-learning approach for automated and systematic prediction of nutrient content available in food.
