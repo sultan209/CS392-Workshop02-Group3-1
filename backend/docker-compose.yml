@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+    food-prediction-api:
+        build: .
+        environment:
+            - PORT=3000
+        ports:
+            - "8000:3000"
+        

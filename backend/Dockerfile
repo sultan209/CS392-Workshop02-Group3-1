@@ -6,4 +6,4 @@ RUN npm install
 COPY ./ ./
 ENV PORT 3000
 EXPOSE $PORT
-CMD ["node", "app/src/main.js"]
+CMD ["node", "src/main.js"]

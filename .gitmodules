@@ -1,0 +1,3 @@
+[submodule "food-prediction-frontend"]
+	path = food-prediction-frontend
+	url = https://github.com/AhmedAl-Sardi/food-prediction-frontend.git
