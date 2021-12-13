@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+    food-prediction-api:
+        build:
+            context: backend/
+            dockerfile: Dockerfile
+        environment:
+            - PORT=3000
+        ports:
+            - "8000:3000"
+    
+    food-prediction-angular:
+        build:
+            context: food-prediction-frontend
+            dockerfile: Dockerfile
+        ports:
+            - "4200:80"
