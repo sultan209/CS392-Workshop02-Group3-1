@@ -13,8 +13,7 @@ npm run start
 ```
 ### Operating instructions:
 Write any kind of food ingredients on the text field and press submit then the result will appear on a text area. For example, If we write beef, tomato, and bread it will return a burger. For clearing the text there is a button that will clear all the fields and you will be ready to write again. While the text area is going to dynamically change.
-### Support:
-For any problem please contact us on this email suppws02@gmail.com
+
 ### Contributors:
 [Ahmed Saud Alshaalan](https://github.com/AhmedSaudA)
 [Sultan Almansour](https://github.com/sultan209)
